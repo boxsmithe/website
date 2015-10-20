@@ -1,0 +1,31 @@
+<html>
+	<body style = "background-color:#FFF;">
+		<img src="menu.png" style="height: 50px; width: 50px;" id = "show">
+		<div id="text" style = "height: 725px; width: 600px; margin-top:0px; font-size: 32px;">
+			<p>THIS IS A NAVIGATION DRAWER SAMPLE. THIS WILL BE USED IN MAKING THE WEBSITE. THIS EXAMPLE USES JQUERY.</p>
+		</div>
+		<div id="something" style = "position: absolute; background-color:#000; margin-left:-500px; margin-top: -810px; font-color: #FFF; height: 200px; width: 400px;">
+			<img src="menu.png" style = "height: 50px; width: 50px; margin-left:10px;" id = "return"></img>
+			<ul style = "color: #FFF; margin-left:50px; margin-top: -50px; font-size: 24px">
+				<li style = "font-color: #FFF;">Do this</li>
+				<li style = "font-color: #FFF;">Then do that</li>
+				<li style = "font-color: #FFF;">Then have fun</li>
+				<li style = "font-color: #FFF;">THEN safety first</li>
+			</ul>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				$("#show").click(function(){
+             		$("#something").animate({left: '500px'}, "slow")
+				});
+				$("#text").click(function(){
+					$("#something").animate({left: '-500px'}, "slow");
+				});
+				$("#return").click(function(){
+					$("#something").animate({left: '-500px'}, "slow");
+				});
+			});
+		</script>
+	</body>
+</html>
