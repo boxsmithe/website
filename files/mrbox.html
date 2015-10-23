@@ -1,34 +1,83 @@
 <html>
 	<head>
-		<title>Mr. Box</title>
+		<title>My Site</title>
 	</head>
 	<body>
 		<link rel="stylesheet" type="text/css" href="styles.css">
-		<div id = "header">
-			<img src="minecraft.jpg"></img>
-		</div>
-		<input type="checkbox" id="drawer-toggle" name="drawer-toggle"/>
-		<label for="drawer-toggle" id="drawer-toggle-label"></label>
-   		<header>
-   				<img src="logo.png" style="height:30px; width:200px;"></img>
-   		</header>
-   		<nav id="drawer">
-      		<div id="menu-opt">
-      			<p style="position:fixed;left: 80px; margin-top:10px;">Kick back and relax</p>
-      		</div>
-      		<div id="menu-opt">
-      			<p style="position:fixed;left: 100px; margin-top:10px;">Play the game</p>
-      		</div>
-      		<div id="menu-opt">
-      			<p style="position:fixed;left: 100px; margin-top:10px;">Get on a server</p>
-      		</div>
-      		<div id="menu-opt">
-      			<p style="position:fixed;left: 50px; margin-top:10px;">Try out the new story mode</p>
-      		</div>
-    	</nav>
-    	<div id="page-content">
-        	<p>Minecraft is a fun game where you can build and fight mobs.</p>
-    	</div>
+    <div id = "title">
+      <img src="menu2.png" id="icons" style = "margin-left: 0px;" class = "open">
+      <p style = "margin-left:550px; font-size: 32px; padding-top:25px; padding-right:25px; margin-top: -45px;">My Website</p>
+    </div>
+    <div id="menu">
+      <div style = "height:75px;">
+        <img src="close2.png" id = "icons" class = "close">
+      </div>
+      <div id = "option1">
+        <p>Home page</p>
+      </div>
+      <div id = "option2">
+        <p>Fun Stuff</p>
+      </div>
+      <div id = "option2">
+        <p>Cool Pictures</p>
+      </div>
+      <div id = "option2">
+        <p>Sneak Peeks</p>
+      </div>
+    </div>
+    <div class = "content" id = "content">
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc quis orci tortor. Nullam enim nisl, laoreet a aliquam a, sagittis vitae sapien. Sed eget lectus ac purus placerat pretium. Etiam sagittis massa sit amet lacus sollicitudin, at rutrum odio tincidunt. Curabitur auctor lacus in eros pellentesque lacinia. Pellentesque at faucibus diam, non ultricies nibh. Maecenas bibendum elementum arcu in accumsan. In eleifend lorem eu risus imperdiet pulvinar. Vivamus cursus nisi id purus fringilla tincidunt. Aliquam nec ante quam. In consectetur, turpis vitae sagittis euismod, nulla turpis sollicitudin mauris, rutrum dapibus est elit bibendum lectus. Sed ornare nulla in erat rhoncus laoreet. Praesent id leo tortor. Donec eros lacus, auctor ut auctor non, volutpat quis mi. Curabitur tristique rhoncus purus non suscipit.
+      </p>
+
+      <p>
+        Cras dictum ipsum non mi blandit, sit amet consequat diam maximus. Aliquam fringilla, metus fringilla dictum fermentum, augue libero dignissim risus, nec tempus justo ligula non libero. Aenean vel felis elit. Donec libero purus, ornare sed urna a, facilisis bibendum ligula. Curabitur id semper tortor. Donec metus ipsum, vulputate in pretium vel, gravida in dolor. Fusce faucibus vitae leo quis semper. Nam pellentesque, nunc sed faucibus pretium, lectus leo porta nulla, sit amet dignissim eros turpis sed justo. Mauris tincidunt nulla non nunc porta, et congue libero pulvinar. Fusce dictum dui lorem, ut bibendum risus bibendum id. Proin ultricies lorem nec tortor commodo dictum. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Sed vestibulum cursus justo eu dictum. Nullam eget elit eros.
+      </p>
+
+      <p>
+        Fusce molestie sagittis magna id pretium. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin arcu ex, aliquet et urna sed, lacinia blandit enim. Nam euismod et felis non dictum. Suspendisse est arcu, elementum id metus nec, malesuada tincidunt ligula. Mauris eget elit a libero accumsan suscipit id vel nisl. Nunc at enim lorem. Quisque placerat mi tellus, eget vestibulum est imperdiet non. Fusce nisi lectus, bibendum pretium scelerisque id, pharetra in ipsum. Duis erat dolor, vulputate ut urna ac, semper vehicula enim. Donec fermentum ex vel turpis ultrices sollicitudin. Pellentesque pulvinar imperdiet pharetra. Nunc sollicitudin suscipit augue, in egestas purus malesuada in. Nam ultrices maximus eros sed ullamcorper.
+      </p>
+      <div id="pictures" class = "pictures">
+        <div id = "picture" class = "picture1">
+          <img src="done.png" class = "done1" id = "done">
+          <img src="mrboxicon.png" id = "pics" class = "pics1">
+        </div>
+      </div>
+      <div id="pictures" class = "pictures2">
+        <div id = "picture" class = "picture2">
+          <img src="done.png" class = "done2" id = "done">
+          <img src="mrcircle.png" id = "pics" class = "pics2">
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script>
+      $(document).ready(function(){
+        $(".close").hide();
+        $(".open").click(function(){
+          $("#menu").animate({left: '300px'}, "slow");
+          $(".close").delay(800).fadeIn();
+        });
+        $(".content").click(function(){
+          $("#menu").animate({left: '-300px'}, "slow");
+          $(".close").hide();
+        });
+        $(".close").click(function(){
+          $("#menu").animate({left: '-300px'}, "slow");
+          $(".close").hide();
+        });
+        $(".done1").click(function(){
+          $(".pictures").animate({left: '200px'}, 750);
+          $(".pics1").fadeOut();
+          $(".done1").fadeOut();
+        });
+        $(".done2").click(function(){
+          $(".pictures2").animate({left: '200px'}, 750);
+          $(".pics2").fadeOut();
+          $(".done2").fadeOut();
+        });
+      });
+    </script>
 	</body>
 
 </html>
